@@ -1,2 +1,0 @@
-class KittensController < ApplicationController
-end
