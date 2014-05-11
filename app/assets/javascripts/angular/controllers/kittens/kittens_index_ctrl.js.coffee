@@ -1,3 +1,3 @@
-App.controller 'KittensCtrl', ['$scope', ($scope) ->
-  $scope.message = "App is working!!!"
+App.controller 'KittensCtrl', ['$scope', 'Kitten', ($scope, Kitten) ->
+  $scope.kittens = Kitten.query()
 ]
