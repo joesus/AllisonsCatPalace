@@ -655,7 +655,7 @@ ngRouteModule.directive('ngView', ngViewFillContentFactory);
  * @description
  * # Overview
  * `ngView` is a directive that complements the {@link ngRoute.$route $route} service by
- * including the rendered template of the current route into the main layout (`index.html`) file.
+ * including the rendered template of the current route into the cats layout (`index.html`) file.
  * Every time the current route changes, the included view changes with it according to the
  * configuration of the `$route` service.
  *
@@ -681,7 +681,7 @@ ngRouteModule.directive('ngView', ngViewFillContentFactory);
  * @example
     <example module="ngViewExample" deps="angular-route.js" animations="true">
       <file name="index.html">
-        <div ng-controller="MainCntl as main">
+        <div ng-controller="MainCntl as cats">
           Choose:
           <a href="Book/Moby">Moby</a> |
           <a href="Book/Moby/ch/1">Moby: Ch1</a> |
@@ -694,11 +694,11 @@ ngRouteModule.directive('ngView', ngViewFillContentFactory);
           </div>
           <hr />
 
-          <pre>$location.path() = {{main.$location.path()}}</pre>
-          <pre>$route.current.templateUrl = {{main.$route.current.templateUrl}}</pre>
-          <pre>$route.current.params = {{main.$route.current.params}}</pre>
-          <pre>$route.current.scope.name = {{main.$route.current.scope.name}}</pre>
-          <pre>$routeParams = {{main.$routeParams}}</pre>
+          <pre>$location.path() = {{cats.$location.path()}}</pre>
+          <pre>$route.current.templateUrl = {{cats.$route.current.templateUrl}}</pre>
+          <pre>$route.current.params = {{cats.$route.current.params}}</pre>
+          <pre>$route.current.scope.name = {{cats.$route.current.scope.name}}</pre>
+          <pre>$routeParams = {{cats.$routeParams}}</pre>
         </div>
       </file>
 
