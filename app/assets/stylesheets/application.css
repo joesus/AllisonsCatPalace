@@ -30,14 +30,6 @@ body {
     padding-top:50px;
 }
 
-footer {
-    margin-top:40px;
-    padding-top:40px;
-    padding-bottom:40px;
-    background-color:#ededed;
-}
-
-
 #masthead {
     min-height:199px;
 }
@@ -59,18 +51,9 @@ footer {
     width:100%;
 }
 
-.story-img {
-    margin-top:25%;
-    display:block;
-}
-
 a,a:hover {
     color:#223344;
     text-decoration:none;
-}
-
-.icon-bar {
-    background-color:#fff;
 }
 
 @media screen and (min-width: 768px) {
@@ -143,4 +126,39 @@ a,a:hover {
     table th:nth-child(3),
     table td:nth-child(4),
     table th:nth-child(4) { display: none }
+}
+
+
+/** Detail View **/
+img.kitten {
+    float: left;
+    border: 1px solid black;
+    margin-right: 3em;
+    margin-bottom: 2em;
+    background-color: white;
+    padding: 2em;
+    height: 400px;
+    width: 400px;
+}
+
+ul.kitten-detail {
+    /*clear: both;*/
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.kitten-detail > li{
+    display: inline-block;
+    width: 200px;
+    vertical-align: top;
+}
+
+ul.kitten-detail > li > span{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+ul.kitten-detail dt {
+    font-weight: bold;
 }
