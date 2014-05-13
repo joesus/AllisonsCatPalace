@@ -1,11 +1,16 @@
 <h3>Kittens</h3>
 {{message}}
-<table class="table table-striped">
+<table class="table table-responsive table-striped">
     <thead>
     <td>Id</td>
     <td>First Name</td>
-    <td>Favorite Hat</td>
+    <td>Gender</td>
+    <td>Birthplace</td>
+    <td>Weight</td>
     <td>Age</td>
+    <td>Favorite Food</td>
+    <td>Favorite Toy</td>
+    <td>Favorite Napspot</td>
     <td>Actions</td>
     </thead>
     <tbody>
@@ -17,13 +22,28 @@
             {{kitten.name}}
         </td>
         <td>
-            {{kitten.favoritehat}}
+            {{kitten.gender}}
+        </td>
+        <td>
+            {{kitten.birthcity}}, {{kitten.birthstate}}
+        </td>
+        <td>
+            {{kitten.weight}}
         </td>
         <td>
             {{kitten.age}}
         </td>
         <td>
-            <a href="/#/kittens/{{kitten.id}}">| Show</a>
+            {{kitten.favoritefood}}
+        </td>
+        <td>
+            {{kitten.favoritetoy}}
+        </td>
+        <td>
+            {{kitten.favoritenapspot}}
+        </td>
+        <td>
+            <a href="/#/kittens/{{kitten.id}}">Show | #edit | #delete</a>
         </td>
     </tr>
     </tbody>
