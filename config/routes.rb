@@ -1,10 +1,12 @@
 AllisonsCatPalace::Application.routes.draw do
 
-  namespace :api, path: '/' do
-    resources :kittens
+  namespace :api do
+    resources :kittens, defaults: { format: "json" }
   end
 
   root "home#index"
+
+  match "*path" => "home#index", via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
