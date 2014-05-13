@@ -25,6 +25,8 @@ App.config(['$routeProvider', '$locationProvider',
         templateUrl: "<%= asset_path('kitten-show.html') %>",
         controller: 'KittenShowCtrl'
       }).
+      when("/kittens/:id/edit", { templateUrl: "<%= asset_path('kitten-edit.html') %> ",
+        controller: "KittenEditCtrl" }).
       otherwise({
         redirectTo: '/kittens'
       });
