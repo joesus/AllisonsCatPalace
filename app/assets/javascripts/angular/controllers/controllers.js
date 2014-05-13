@@ -27,4 +27,54 @@ kittenControllers.controller('KittenListCtrl', ['$scope', '$routeParams', 'Kitte
 kittenControllers.controller("KittenEditCtrl", ['$scope', '$routeParams', '$location', 'Kitten',
   function($scope, $routeParams, $location, Kitten) {
 
+  if ($routeParams.id) {
+    $scope.kitten = Kitten.show({ id: $routeParams.id });
+  } else {
+    $scope.kitten = new Kitten();
+  }
+
+  $scope.submit = function() {
+    console.log("submit")
+
+    function success(response) {
+      console.log("success", response)
+      $location.path("/kitten-list");
+    }
+
+    function failure(response) {
+      console.log("failure", response)
+
+      _.each(response.data, function(errors, key) {
+        _.each(errors, function(e) {
+          $scope.form[key].$dirty = true;
+          $scope.form[key].$setValidity(e, false);
+        });
+      });
+    }
+
+    if ($routeParams.id) {
+      Kitten.update($scope.kitten, success, failure);
+    } else {
+      Kitten.create($scope.kitten, success, failure);
+    }
+
+  };
+
+  $scope.cancel = function() {
+    $location.path("/kittens/"+$scope.kitten.id);
+  };
+
+  $scope.errorClass = function(name) {
+    var s = $scope.form[name];
+    return s.$invalid && s.$dirty ? "error" : "";
+  };
+
+  $scope.errorMessage = function(name) {
+    var s = $scope.form[name].$error;
+    result = [];
+    _.each(s, function(key, value) {
+      result.push(value);
+    });
+    return result.join(", ");
+  };
 }]);
