@@ -2,12 +2,16 @@ module API
 
   class KittensController < ApplicationController
 
+    respond_to :json
+
     def index
-      render json: Kitten.all
+      @kittens = Kitten.all
+      respond_with @kittens
     end
 
     def show
-      render json: Kitten.find(params[:id])
+      @kitten = Kitten.find(params[:id])
+      respond_with @kitten
     end
   end
 
