@@ -8,9 +8,12 @@
 </head>
 <body>
 
-<header>Welcome to Allison's Cat Palace!</header>
-
-<%= yield %>
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      <ng-view></ng-view>
+    </div>
+  </div><!--/row-->
 
 </body>
 </html>
