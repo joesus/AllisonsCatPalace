@@ -1,0 +1,27 @@
+'use strict';
+
+/* App Module */
+
+var App = angular.module('Kittens', [
+  'ngRoute',
+  'ngResource',
+  'kittenControllers',
+  'kittenServices'
+]);
+
+App.config(['$routeProvider', '$locationProvider',
+  function($routeProvider, $locationProvider) {
+    $locationProvider.html5Mode(true);
+    $routeProvider.
+      when('/kittens', {
+        templateUrl: "<%= asset_path('kitten-index.html') %>",
+        controller: 'KittenIndexCtrl'
+      }).
+      when('/kittens/:id', {
+        templateUrl: "<%= asset_path('kitten-show.html') %>",
+        controller: 'KittenShowCtrl'
+      }).
+      otherwise({
+        redirectTo: '/kittens'
+      });
+  }]);
