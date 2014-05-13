@@ -1,0 +1,30 @@
+<h3>Kittens</h3>
+{{message}}
+<table class="table table-striped">
+    <thead>
+    <td>Id</td>
+    <td>First Name</td>
+    <td>Favorite Hat</td>
+    <td>Age</td>
+    <td>Actions</td>
+    </thead>
+    <tbody>
+    <tr ng-repeat="kitten in kittens">
+        <td>
+            {{kitten.id}}
+        </td>
+        <td>
+            {{kitten.name}}
+        </td>
+        <td>
+            {{kitten.favoritehat}}
+        </td>
+        <td>
+            {{kitten.age}}
+        </td>
+        <td>
+            <a href="/#/kittens/{{kitten.id}}">| Show</a>
+        </td>
+    </tr>
+    </tbody>
+</table>

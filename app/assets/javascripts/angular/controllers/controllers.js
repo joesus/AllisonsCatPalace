@@ -17,3 +17,8 @@ kittenControllers.controller('KittenShowCtrl', ['$scope', '$routeParams', 'Kitte
     $scope.kitten = Kitten.show({ id: $routeParams.id });
 
  }]);
+
+kittenControllers.controller('KittenListCtrl', ['$scope', '$routeParams', 'Kitten',
+  function($scope, $routeParams, Kitten) {
+    $scope.kittens = Kitten.index();
+}]);

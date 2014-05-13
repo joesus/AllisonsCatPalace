@@ -17,6 +17,10 @@ App.config(['$routeProvider', '$locationProvider',
         templateUrl: "<%= asset_path('kitten-index.html') %>",
         controller: 'KittenIndexCtrl'
       }).
+      when('/kitten-list', {
+        templateUrl: "<%= asset_path('kitten-list.html') %>",
+        controller: 'KittenListCtrl'
+      }).
       when('/kittens/:id', {
         templateUrl: "<%= asset_path('kitten-show.html') %>",
         controller: 'KittenShowCtrl'
