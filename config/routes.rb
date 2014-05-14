@@ -1,5 +1,7 @@
 AllisonsCatPalace::Application.routes.draw do
 
+  devise_for :users
+
   namespace :api do
     resources :kittens, defaults: { format: "json" }
   end
