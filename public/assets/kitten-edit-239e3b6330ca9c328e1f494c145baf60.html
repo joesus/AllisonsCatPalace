@@ -1,0 +1,65 @@
+<img ng-src="{{kitten.picture}}" class="kitten">
+
+        <div class="col-md-6">
+<h3>Edit {{kitten.name}}</h3>
+
+<form name="form" role="form" ng-submit="submit()">
+
+    <div class="form-group" ng-class="errorClass('firstname')">
+        <label for="name">Name</label>
+        <div class="controls">
+            <input ng-model="kitten.name" type="text" name="name" placeholder="Name" required autofocus>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="errorClass('lastname')">
+        <label for="lastname">Cuteness Level (one to a million)</label>
+        <div class="controls">
+            <input ng-model="kitten.cutenesslevel" type="text" name="cutenesslevel" placeholder="Cuteness" required>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="errorClass('age')">
+        <label for="age">Age</label>
+        <div class="controls">
+            <input ng-model="kitten.age" type="text" name="age" placeholder="Age" required>
+      <!--<span class="help-block" ng-show="form.age.$invalid && form.age.$dirty">-->
+        <!--{{errorMessage('age')}}-->
+      <!--</span>-->
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="controls">
+            <a class="btn" ng-click="cancel()">Cancel</a>
+            <button type="submit" class="btn btn-success">Save</button>
+        </div>
+    </div>
+</form>
+
+
+<a href="/kittens/{{kitten.id}}">Back to Kitten</a>
+
+            <!--create_table "kittens", force: true do |t|-->
+            <!--t.boolean  "adoptable"-->
+            <!--t.integer  "cutenesslevel"-->
+            <!--t.string   "picture"-->
+            <!--t.integer  "age"-->
+            <!--t.string   "name"-->
+            <!--t.string   "gender"-->
+            <!--t.string   "birthcity"-->
+            <!--t.string   "birthstate"-->
+            <!--t.text     "about"-->
+            <!--t.string   "favoritefood"-->
+            <!--t.string   "favoritetoy"-->
+            <!--t.string   "favoritebathroom"-->
+            <!--t.string   "favoritenapspot"-->
+            <!--t.string   "favoritehat"-->
+            <!--t.string   "favoriteoutfit"-->
+            <!--t.float    "weight"-->
+            <!--t.text     "greeting"-->
+            <!--t.datetime "created_at"-->
+            <!--t.datetime "updated_at"-->
+            <!--end-->
+
+            <!--end-->
