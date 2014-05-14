@@ -23,7 +23,7 @@
 
 
 <!--/stories-->
-<div class="row col-md-10 col-md-offset-2" ng-repeat="kitten in kittens">
+<div class="row col-md-10 col-md-offset-2" ng-repeat="kitten in kittens | filter:search">
     <br>
     <div class="col-md-2 col-sm-3 text-center">
         <a class="story-img" href="#"><img ng-src="{{kitten.picture}}" style="width:100px;height:100px" class="img-circle"></a>
