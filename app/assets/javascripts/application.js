@@ -16,5 +16,6 @@
 //= require angular
 //= require angular-route
 //= require angular-resource
+//= require angular-animate-min
 //= require angular/app.js.erb
 //= require_tree ./angular
