@@ -23,8 +23,8 @@ AllisonsCatPalace::Application.configure do
     domain: 'gmail.com',
     authentication: 'plain',
     enable_starttls_auto: true,
-    user_name: 'my-gmail-address',
-    password: 'my-gmail-password'
+    user_name: ENV['GMAIL_ADDRESS'],
+    password: ENV['GMAIL_PASSWORD']
   }
 
   # Print deprecation notices to the Rails logger.
