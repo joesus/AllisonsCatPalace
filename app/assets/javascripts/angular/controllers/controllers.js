@@ -21,9 +21,14 @@ kittenControllers.controller('KittenIndexCtrl', ['$scope', '$location', 'Kitten'
   }
 }]);
 
-kittenControllers.controller('KittenShowCtrl', ['$scope', '$routeParams', 'Kitten',
-  function($scope, $routeParams, Kitten) {
+kittenControllers.controller('KittenShowCtrl', ['$scope', '$routeParams', 'Kitten', '$location',
+  function($scope, $routeParams, Kitten, $location) {
     $scope.kitten = Kitten.show({ id: $routeParams.id });
+
+    $scope.submit = function() {
+      Kitten.destroy($scope.kitten);
+      $location.path("/kittens/" + kittenId)
+    };
 
  }]);
 
