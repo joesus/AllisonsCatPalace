@@ -8,8 +8,17 @@ kittenControllers.controller('KittenIndexCtrl', ['$scope', '$location', 'Kitten'
 
   $scope.detail = function() {
     $location.path("/kittens/" + kittenId)
-  }
+  };
 
+  $scope.animateKitten = function(childScope){
+    element = $("#kitten-" + childScope.kitten.id);
+    animation = "tada";
+    element.addClass('animated ' + animation);
+    //wait for animation to finish before removing classes
+    window.setTimeout( function(){
+      element.removeClass('animated ' + animation);
+    }, 2000);
+  }
 }]);
 
 kittenControllers.controller('KittenShowCtrl', ['$scope', '$routeParams', 'Kitten',
